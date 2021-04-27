@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnOne"
+            style="@style/NumKeyboardButtonStyle"
+            onSingleClick="@{onClickListener}"
+            android:text="@string/num_keyboard_1"
+            app:layout_constraintBottom_toTopOf="@id/btnFour"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnTwo"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/btnTwo"
+            style="@style/NumKeyboardButtonStyle"
+            onSingleClick="@{onClickListener}"
+            android:text="@string/num_keyboard_2"
+            app:layout_constraintBaseline_toBaselineOf="@id/btnOne"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnThree"
+            app:layout_constraintStart_toEndOf="@id/btnOne" />
+
+        <Button
+            android:id="@+id/btnThree"
+            style="@style/NumKeyboardButtonStyle"
+            onSingleClick="@{onClickListener}"
+            android:text="@string/num_keyboard_3"
+            app:layout_constraintBaseline_toBaselineOf="@id/btnOne"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnTwo" />
+
+        <Button
+            android:id="@+id/btnFour"
+            style="@style/NumKeyboardButtonStyle"
+            onSingleClick="@{onClickListener}"
+            android:text="@string/num_keyboard_4"
+            app:layout_constraintBottom_toTopOf="@id/btnSeven"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnFive"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnOne" />
+
+        <Button
+            android:id="@+id/btnFive"
+            style="@style/NumKeyboardButtonStyle"
+            onSingleClick="@{onClickListener}"
+            android:text="@string/num_keyboard_5"
+            app:layout_constraintBaseline_toBaselineOf="@id/btnFour"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnSix"
+            app:layout_constraintStart_toEndOf="@id/btnFour" />
+
+        <Button
+            android:id="@+id/btnSix"
+            style="@style/NumKeyboardButtonStyle"
+            onSingleClick="@{onClickListener}"
+            android:text="@string/num_keyboard_6"
+            app:layout_constraintBaseline_toBaselineOf="@id/btnFour"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnFive" />
+
+        <Button
+            android:id="@+id/btnSeven"
+            style="@style/NumKeyboardButtonStyle"
+            onSingleClick="@{onClickListener}"
+            android:text="@string/num_keyboard_7"
+            app:layout_constraintBottom_toTopOf="@id/btnZero"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnEight"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnFour" />
+
+        <Button
+            android:id="@+id/btnEight"
+            style="@style/NumKeyboardButtonStyle"
+            onSingleClick="@{onClickListener}"
+            android:text="@string/num_keyboard_8"
+            app:layout_constraintBaseline_toBaselineOf="@id/btnSeven"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnNine"
+            app:layout_constraintStart_toEndOf="@id/btnSeven" />
+
+        <Button
+            android:id="@+id/btnNine"
+            style="@style/NumKeyboardButtonStyle"
+            onSingleClick="@{onClickListener}"
+            android:text="@string/num_keyboard_9"
+            app:layout_constraintBaseline_toBaselineOf="@id/btnSeven"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnEight" />
+
+        <Button
+            android:id="@+id/btnZero"
+            style="@style/NumKeyboardButtonStyle"
+            onSingleClick="@{onClickListener}"
+            android:text="@string/num_keyboard_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/ibDelete"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSeven" />
+
+        <ImageButton
+            android:id="@+id/ibDelete"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/selector_bg_num_keyboard"
+            android:onClick="@{onClickListener}"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnPlaceHolder"
+            app:layout_constraintStart_toEndOf="@id/btnZero"
+            app:layout_constraintTop_toTopOf="@id/btnZero"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:id="@+id/btnPlaceHolder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBaseline_toBaselineOf="@id/btnZero"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ibDelete" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
