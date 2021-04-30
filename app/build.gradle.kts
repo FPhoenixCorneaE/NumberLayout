@@ -37,6 +37,7 @@ android {
         jumboMode = true
     }
     lintOptions {
+        isCheckReleaseBuilds = false
         isAbortOnError = false
     }
     buildFeatures {
