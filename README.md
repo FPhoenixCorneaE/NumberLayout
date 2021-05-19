@@ -3,5 +3,5 @@
 --------------------------------------------
 
 <div align="center">
-    <img src="https://github.com/FPhoenixCorneaE/NumberLayout/blob/master/images/pic_number_layout.png" width="320"/>
+    <img src="https://github.com/FPhoenixCorneaE/NumberLayout/blob/main/images/pic_number_layout.png" width="320"/>
 </div>
