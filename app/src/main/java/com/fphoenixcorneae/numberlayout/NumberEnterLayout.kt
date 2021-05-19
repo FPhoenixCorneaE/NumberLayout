@@ -65,16 +65,31 @@ class NumberEnterLayout(
                 gravity = Gravity.CENTER
                 textSize = numberSize
                 setTextColor(numberColor)
+                // 字体加粗
                 paint.isFakeBoldText = true
-                filters = arrayOf<InputFilter>(LengthFilter(1))
+                // 只可输入数字
                 inputType = InputType.TYPE_CLASS_NUMBER
-                isEnabled = index == 0
+                // 是否可点击
+                isClickable = index == 0
+                // 是否获取鼠标的焦点
+                isFocusable = isClickable
+                // 是否可在触摸模式下对焦
+                isFocusableInTouchMode = isClickable
+                // 光标是否可见
+                isCursorVisible = isClickable
+                if (isClickable) {
+                    // 请求焦点
+                    requestFocus()
+                }
+                // 最大长度为 1
+                filters = arrayOf<InputFilter>(LengthFilter(1))
                 addTextChangedListener(this@NumberEnterLayout)
                 setOnKeyListener(this@NumberEnterLayout)
             }
             addView(child, LayoutParams(boxSize, boxSize))
 
             if (index < numberCount - 1) {
+                // 添加间隔
                 addView(Space(context), LayoutParams(spaceSize, boxSize))
             }
         }
@@ -91,7 +106,8 @@ class NumberEnterLayout(
             }
         }
         children.forEachIndexed { index, view ->
-            view.isEnabled = when {
+            // 是否可点击
+            view.isClickable = when {
                 enterNumber.isEmpty() -> {
                     index == 0
                 }
@@ -103,10 +119,17 @@ class NumberEnterLayout(
                 }
             }
             if (view is EditText) {
-                if (view.isEnabled) {
-                    view.requestFocus()
-                    view.isFocusable = true
-                    view.isFocusableInTouchMode = true
+                view.apply {
+                    // 是否获取鼠标的焦点
+                    isFocusable = isClickable
+                    // 是否可在触摸模式下对焦
+                    isFocusableInTouchMode = isClickable
+                    // 光标是否可见
+                    isCursorVisible = isClickable
+                    if (isClickable) {
+                        // 请求焦点
+                        requestFocus()
+                    }
                 }
             }
         }

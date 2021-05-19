@@ -52,6 +52,6 @@ dependencies {
     implementation(Deps.Kotlin.stdlib)
     implementation(Deps.AndroidX.coreKtx)
     implementation(Deps.AndroidX.appcompat)
-    implementation(Deps.AndroidX.constraintlayout)
+    implementation(Deps.AndroidX.constraintLayout)
     implementation(Deps.material)
 }
