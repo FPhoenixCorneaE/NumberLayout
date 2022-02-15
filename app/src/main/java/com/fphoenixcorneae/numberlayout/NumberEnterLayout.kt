@@ -180,6 +180,9 @@ class NumberEnterLayout(
     fun clearNumbers() {
         children.forEach {
             if (it is EditText) {
+                if (it.background is GradientDrawable) {
+                    (it.background as GradientDrawable).setStroke(strokeWidth, strokeColor)
+                }
                 it.text?.clear()
             }
         }

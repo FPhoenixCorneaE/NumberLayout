@@ -109,10 +109,7 @@ class NumberDisplayLayout(
         children.forEach {
             if (it is TextView) {
                 if (it.background is GradientDrawable) {
-                    (it.background as GradientDrawable).setStroke(
-                        strokeWidth,
-                        strokeColor
-                    )
+                    (it.background as GradientDrawable).setStroke(strokeWidth, strokeColor)
                 }
                 it.text = ""
             }
