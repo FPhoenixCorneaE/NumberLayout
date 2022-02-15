@@ -1,17 +1,16 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    id("kotlin-android-extensions")
     id("kotlin-kapt")
 }
 
 android {
-    compileSdkVersion(Deps.Android.compileSdkVersion)
-    buildToolsVersion(Deps.Android.buildToolsVersion)
+    compileSdk = Deps.Android.compileSdkVersion
+    buildToolsVersion = Deps.Android.buildToolsVersion
     defaultConfig {
-        applicationId(Deps.Android.applicationId)
-        minSdkVersion(Deps.Android.minSdkVersion)
-        targetSdkVersion(Deps.Android.targetSdkVersion)
+        applicationId = Deps.Android.applicationId
+        minSdk = Deps.Android.minSdkVersion
+        targetSdk = Deps.Android.targetSdkVersion
         versionCode = Deps.Android.versionCode
         versionName = Deps.Android.versionName
 
@@ -33,15 +32,13 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-    dexOptions {
-        jumboMode = true
-    }
-    lintOptions {
+    lint {
         isCheckReleaseBuilds = false
         isAbortOnError = false
     }
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
 }
 

@@ -26,10 +26,11 @@ class NumberDisplayLayout(
     var numberColor = Color.parseColor("#001b37")
 
     /**
-     * 描边颜色、验证失败描边颜色、描边宽度
+     * 描边颜色、验证失败描边颜色、验证成功描边颜色、描边宽度
      */
     var strokeColor = Color.parseColor("#c9c9c9")
     var errorStrokeColor = Color.parseColor("#ff0000")
+    var correctStrokeColor = Color.parseColor("#00ff00")
     var strokeWidth = 1
 
     /**
@@ -88,14 +89,12 @@ class NumberDisplayLayout(
                 val filledNumbers = numbers.subList(0, index + 1).joinToString("")
                 val isCorrect = filledNumbers == correctNumbers
                 onFillFinishedListener?.invoke(isCorrect)
-                if (!isCorrect) {
-                    children.forEach {
-                        if (it.background is GradientDrawable) {
-                            (it.background as GradientDrawable).setStroke(
-                                strokeWidth,
-                                errorStrokeColor
-                            )
-                        }
+                children.forEach {
+                    if (it.background is GradientDrawable) {
+                        (it.background as GradientDrawable).setStroke(
+                            strokeWidth,
+                            if (isCorrect) correctStrokeColor else errorStrokeColor
+                        )
                     }
                 }
                 break

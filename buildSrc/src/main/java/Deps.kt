@@ -5,7 +5,7 @@
 object Deps {
 
     object Plugin {
-        const val gradle = "com.android.tools.build:gradle:4.2.1"
+        const val gradle = "com.android.tools.build:gradle:7.0.3"
     }
 
     object Android {
@@ -25,7 +25,7 @@ object Deps {
     }
 
     object Kotlin {
-        private const val kotlinVersion = "1.5.0"
+        private const val kotlinVersion = "1.6.10"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     }
